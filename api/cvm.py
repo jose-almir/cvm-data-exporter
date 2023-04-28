@@ -19,10 +19,10 @@ def cia_aberta_cad():
 
         assert response.status_code == 200, "Failed request"
 
-        with open('.cache/cad_cia_aberta.csv', 'w') as f:
+        with open('.cache/cad_cia_aberta.csv', 'w', encoding='utf-8') as f:
             f.write(response.text)
 
-    df = pd.read_csv('.cache/cad_cia_aberta.csv', sep=';', encoding='iso-8859-15')
+    df = pd.read_csv('.cache/cad_cia_aberta.csv', sep=';', encoding='utf-8')
     df = df.rename(columns={k: camel_case(k) for k in df.columns.values})
 
     return json.loads(df.to_json(orient='records'))
