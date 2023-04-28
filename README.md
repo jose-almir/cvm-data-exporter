@@ -1,9 +1,10 @@
-# cvm-cli
+# cvm-data-exporter
 
-Command-Line Interface(CLI) para coletar informações de companhias abertas e
-demonstrativos financeiros. 
+Command-Line Interface (CLI) to collect information from public companies and financial statements with the possibility to export to MongoDB or JSON file. 
 
-## Requisitos
+This CLI extracts open data from the CVM, or "Comissão de Valores Mobiliários" portal.
 
-- Ter as credenciais do mongo nas variáveis de ambiente.
-- Instalar o pipenv
+## Requirements
+
+- Set environment variable `MONGO_MASTER_URI`;
+- Install `pipenv`, run `pipenv sync` and `pipenv shell`.
